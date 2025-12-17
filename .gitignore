@@ -1,0 +1,14 @@
+# Data
+data/raw/
+data/processed/
+
+# Logs
+logs/
+
+# Python
+__pycache__/
+.venv/
+.env
+
+# OS
+.DS_Store
