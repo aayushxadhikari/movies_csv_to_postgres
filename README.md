@@ -10,7 +10,7 @@
 1. Start Postgres via Docker
 2. Apply schema.sql
 3. Run ETL:
-   python3.9 -m etl.main data/raw/movies.csv
+   python -m etl.main data/raw/movies.csv
 
 ## Features
 - Chunked CSV processing
