@@ -15,7 +15,7 @@ def transform_movies(df):
 
     movies["release_date"] = pd.to_datetime(movies["release_date"], errors="coerce").dt.date
 
-    # Convert numeric columns safely (fixes runtime "162.0" issue)
+    # Convert numeric columns safely 
     movies["runtime"] = pd.to_numeric(movies["runtime"], errors="coerce").fillna(0).astype(int)
     movies["budget"] = pd.to_numeric(movies["budget"], errors="coerce").fillna(0).astype(int)
     movies["revenue"] = pd.to_numeric(movies["revenue"], errors="coerce").fillna(0).astype(int)
@@ -31,7 +31,7 @@ def transform_movies(df):
     for _, row in df.iterrows():
         movie_id = int(row["id"])
 
-        # ---- genres: support both JSON and plain text like "Romance Drama"
+        # ---- genres: support both JSON and plain text like "Romance Drama" ---
         genres_val = row.get("genres")
         if isinstance(genres_val, str) and not is_jsonish(genres_val):
             # Plain text genres
